@@ -1,0 +1,24 @@
+{
+  "name": "dylans-top-10-api",
+  "version": "1.0.0",
+  "description": "API Backend for Dylan's Top 10 Movies Webpage",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "mongoose": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syman447/dylans-top-10-api.git"
+  },
+  "author": "Sy Adamowsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syman447/dylans-top-10-api/issues"
+  },
+  "homepage": "https://github.com/syman447/dylans-top-10-api#readme"
+}
