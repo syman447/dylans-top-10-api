@@ -38,5 +38,5 @@ app.post("/api/movies", function(req, res){
 	});
 });
 
-app.listen(80);
-console.log("Running on port 80...");
+app.listen(8080);
+console.log("Running on port 8080...");
