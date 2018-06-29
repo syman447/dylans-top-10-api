@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 Movie = require("./models/movie")
 
 //Connect to MongoDB with Mongoose
-mongoose.connect("mongodb://localhost:27017/dylans-top-10-db");
+mongoose.connect("mongodb://heroku_wr321rm2:bn0ftrqq6rpona7jq9bm37v19f@ds123181.mlab.com:23181/heroku_wr321rm2");
 var db = mongoose.connection;
 
 //HELLO WORLD
