@@ -1,8 +1,10 @@
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
+var querystring = require('querystring'); 
 var mongoose = require("mongoose");
 
+app.use(bodyParser.urlencoded({ extended: false }));  
 app.use(bodyParser.json());
 
 Movie = require("./models/movie")
@@ -18,7 +20,7 @@ app.get("/", function(req, res){
 
 //GET movies
 app.get("/api/movies", function(req, res){
-	Movie.getMovies(function(err, movies){
+	Movie.getMovies(req.query, function(err, movies){
 		res.json(movies);
 	});
 });
@@ -32,9 +34,25 @@ app.get("/api/movie/:_id", function(req, res){
 
 //POST movies
 app.post("/api/movies", function(req, res){
-	var movie = req.body;
-	Movie.addMovie(movie, function(err, movie){
+	Movie.addMovie(req.body, function(err, movie){
 		res.json(movie);
+	});
+});
+
+//PUT movie updates
+app.put("/api/movie/:_id", function(req, res){
+	Movie.editMovieById(req.params._id, req.body, function(err, movie){
+		res.json(movie);
+	});
+});
+
+//DELETE movie
+app.delete("/api/movie/:_id", function(req, res){
+	Movie.deleteMovieById(req.params._id, function(err, movie){
+		res.json({
+        	message: "Movie successfully deleted",
+        	id: req.params._id
+    	});
 	});
 });
 
